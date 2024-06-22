@@ -14,7 +14,8 @@ datasource db {
 }
 
 model User {
-  id    Int    @id @default(autoincrement())
-  name  String @unique
+  id    Int     @id @default(autoincrement())
+  name  String  @unique
+  photo String? @unique
   emoji Int?
 }
