@@ -4,14 +4,8 @@ FROM node:latest
 # Cria o diretório de trabalho dentro do contêiner
 WORKDIR /app
 
-# Copia os arquivos de configuração e dependências
-COPY package.json package-lock.json ./
-
 # Instala as dependências
 RUN npm install
-
-# Copia o restante dos arquivos do código fonte
-COPY . .
 
 # Gera os artefatos do Prisma
 RUN npx prisma generate
