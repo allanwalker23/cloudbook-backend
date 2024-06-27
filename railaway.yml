@@ -1,0 +1,7 @@
+# railway.yml
+
+version: 1
+services:
+  prisma:
+    hooks:
+      preDeploy: npx prisma generate
