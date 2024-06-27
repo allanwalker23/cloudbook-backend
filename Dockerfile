@@ -10,8 +10,6 @@ RUN npm install
 
 COPY . .
 
-RUN chown -R node:node .
-
 # Gera os artefatos do Prisma
 RUN npx prisma generate
 
