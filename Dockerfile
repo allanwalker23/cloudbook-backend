@@ -1,11 +1,16 @@
 # Use uma imagem base do Node.js
-FROM node:latest
+FROM node:20
 
 # Cria o diretório de trabalho dentro do contêiner
 WORKDIR /app
 
+COPY package.json ./
 # Instala as dependências
 RUN npm install
+
+COPY . .
+
+RUN chown -R node:node .
 
 # Gera os artefatos do Prisma
 RUN npx prisma generate
